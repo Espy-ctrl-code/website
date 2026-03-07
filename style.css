@@ -101,7 +101,7 @@ main {
     text-decoration: none;
 }
 
-.RandomBlock img {
+.RandomBlock img{
     width: 15%;
     height: 15%;
     aspect-ratio: 1/1;
@@ -109,6 +109,7 @@ main {
     image-rendering: pixelated;
     box-shadow: #2525251a 15px 15px 10px;
     border: 2px solid #ffffff00;
+    background-color: #70707010;
 }
 
 .Block-Title {
