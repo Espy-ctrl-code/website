@@ -21,6 +21,10 @@ header a {
     text-decoration: none;
 }
 
+header td {
+    padding: 0px 20px;
+}
+
 table {
     margin: auto;
     height: 50px;
@@ -35,7 +39,7 @@ main {
 }
 
 
-.RandomChar {
+.RandomChar, .RandomBlock {
     width: 70%;
     height: fit-content;
     text-align: center;
@@ -49,12 +53,12 @@ main {
     background-color: rgba(255, 255, 255, 0.048);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    box-shadow: 25px 25px 55px     #25252523 ;
+    box-shadow: 35px 35px 55px 15px #25252523 ;
 
 
 }
 
-.RandomChar hr {
+.RandomChar hr, .RandomBlock hr {
     width: 75%;
     margin: auto;
     margin-bottom: 50px;
@@ -71,6 +75,8 @@ main {
 
     border: 2px solid #ffffff00;
     background-color: #ffffff0e;
+
+    
 }
 
 
