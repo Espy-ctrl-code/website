@@ -1,3 +1,6 @@
+
+// Random Color Generator
+
 function GenerateRC() {
     Bbox = getbox()
 }
@@ -40,4 +43,24 @@ function resetbox() {
             document.getElementById(boxId).style.backgroundColor = "#ffffff0e";
         }
     }
+}
+
+// Random Block Generator
+let blocksData = [];
+
+// Load blocks from JSON
+fetch('json/Minecraft-Blocks/minecraft_blocks.json')
+    .then(res => res.json())
+    .then(data => { blocksData = data.minecraft_blocks; });
+
+// Random Block Generator
+function GenerateRB() {
+    const block = getRandomBlock();
+    document.getElementById("RandomBlock-Image").src = block.texture;
+    document.getElementById("Block-Title").textContent = block.name;
+}
+
+function getRandomBlock() {
+    const randomId = Math.floor(Math.random() * 600);
+    return blocksData[randomId];
 }
