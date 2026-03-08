@@ -140,8 +140,13 @@ main {
     fill: #ffffff98;
 }
 
-.RandomBlockItem0 {
+.RandomBlockItem0, .RandomBlockItem1, .RandomBlockItem2, .RandomBlockItem3 {
     width: 15%;
     height: 15%;
     display: inline-block;
+}
+
+.RandomBlockItem1, .RandomBlockItem2, .RandomBlockItem3 {
+    visibility: hidden;
+    position: absolute;
 }

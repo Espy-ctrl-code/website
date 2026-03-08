@@ -1,4 +1,3 @@
-
 // Random Color Generator
 
 function GenerateRC() {
@@ -52,10 +51,17 @@ fetch('json/Minecraft-Blocks/minecraft_blocks.json')
     .then(res => res.json())
     .then(data => { blocksData = data.minecraft_blocks; });
 
+fetch('json/Minecraft-Blocks/amount.json')
+    .then(res => res.json())
+    .then(data => { amount = data.item; });
+
+
 function GenerateRB() {
-    const block = getRandomBlock();
-    document.getElementById("RandomBlock-Image").src = block.texture;
-    document.getElementById("Block-Title").textContent = block.name.replace(/_/g, ' ').toUpperCase();
+    for (let i = 0; i < amount; i++) {
+        const block = getRandomBlock();
+        document.getElementById(`RandomBlock-Image${i}`).src = block.texture;
+        document.getElementById(`Block-Title${i}`).textContent = block.name.replace(/_/g, ' ').toUpperCase();
+    }
 }
 
 function getRandomBlock() {
@@ -64,5 +70,28 @@ function getRandomBlock() {
 }
 
 function addBlockItem() {
-    
+    document.querySelector(`.RandomBlockItem${amount}`).style.visibility = "visible";
+    document.querySelector(`.RandomBlockItem${amount}`).style.position = "relative";
+    amount++;
+    if (amount >= 4) {
+        document.querySelector(".plus-icon").style.visibility = "hidden";
+        document.querySelector(".plus-icon").style.position = "absolute";
+        amount = 4;
+    }
 } 
+
+function removeBlock() {
+    if (amount > 1) {
+        amount--;
+        document.querySelector(`.RandomBlockItem${amount}`).style.visibility = "hidden";
+        document.querySelector(`.RandomBlockItem${amount}`).style.position = "absolute";
+        checkAmountBI();
+    }
+}
+
+function checkAmountBI() {
+    if (amount < 4) {
+        document.querySelector(".plus-icon").style.visibility = "visible";
+        document.querySelector(".plus-icon").style.position = "absolute";
+    }
+}
