@@ -177,7 +177,7 @@
         },
         {
             "name": "chest",
-            "texture": "images/Minecraft-Blocks/placeholder.png",
+            "texture": "images/Minecraft-Blocks/chest.png",
             "id": 35
         },
         {
@@ -522,7 +522,7 @@
         },
         {
             "name": "chest_locked_aprilfools_super_old_legacy_we_should_not_even_have_this",
-            "texture": "images/Minecraft-Blocks/placeholder.png",
+            "texture": "images/Minecraft-Blocks/trapped_chest.png",
             "id": 104
         },
         {
@@ -1082,7 +1082,7 @@
         },
         {
             "name": "trapped_chest",
-            "texture": "images/Minecraft-Blocks/placeholder.png",
+            "texture": "images/Minecraft-Blocks/trapped_chest.png",
             "id": 216
         },
         {
@@ -2066,7 +2066,7 @@
             "id": 412
         },
         {
-            "name": "dragon_wall_hhead",
+            "name": "dragon_wall_head",
             "texture": "images/Minecraft-Blocks/placeholder.png",
             "id": 413
         },

@@ -55,6 +55,9 @@ fetch('json/Minecraft-Blocks/amount.json')
     .then(res => res.json())
     .then(data => { amount = data.item; });
 
+fetch('json/Minecraft-Blocks/blacklist_minecraft_blocks.json')
+    .then(res => res.json())
+    .then(data => { blacklist = data["minecraft-block-ids"]; });
 
 function GenerateRB() {
     for (let i = 0; i < amount; i++) {
@@ -66,7 +69,12 @@ function GenerateRB() {
 
 function getRandomBlock() {
     const randomId = Math.floor(Math.random() * 600);
-    return blocksData[randomId];
+    if (!blacklist.includes(randomId)) {
+        return blocksData[randomId];
+    }
+    else {
+        return getRandomBlock();
+    }
 }
 
 function addBlockItem() {
@@ -74,8 +82,8 @@ function addBlockItem() {
     document.querySelector(`.RandomBlockItem${amount}`).style.position = "relative";
     amount++;
     if (amount >= 4) {
-        document.querySelector(".plus-icon").style.visibility = "hidden";
-        document.querySelector(".plus-icon").style.position = "absolute";
+        document.querySelector(".plus-icon").style.visibility = "hidden"; 
+        document.querySelector(".plus-icon").style.position = "fixed"; 
         amount = 4;
     }
 } 
@@ -92,6 +100,6 @@ function removeBlock() {
 function checkAmountBI() {
     if (amount < 4) {
         document.querySelector(".plus-icon").style.visibility = "visible";
-        document.querySelector(".plus-icon").style.position = "absolute";
+        document.querySelector(".plus-icon").style.position = "relative";
     }
 }

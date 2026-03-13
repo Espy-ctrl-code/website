@@ -6,7 +6,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-header {
+header, footer {
     height: 75px;
     background-color: #252525;
     text-align: center;
@@ -18,12 +18,12 @@ header {
     border-bottom: 1px solid #1b1b1b;
 }
 
-header a {
+header a, footer a {
     color: white;
     text-decoration: none;
 }
 
-header td {
+header td, footer td {
     padding: 0px 20px;
 }
 
@@ -60,11 +60,21 @@ main {
 
 }
 
-.RandomChar hr, .RandomBlock hr {
+.RandomChar hr{
     width: 75%;
     margin: auto;
     margin-bottom: 50px;
     border-width: 2px;
+}
+
+.RandomBlock hr {
+    width: 75%;
+    margin: auto;
+    border-width: 2px;
+}
+
+.RandomBlock h2 {
+    padding-top: 50px;
 }
 
 .t-1 {
@@ -153,4 +163,30 @@ main {
 
 .BlockItems {
     align-items: top;
+    display: flex;
+    justify-content: center;
+}
+
+.gear-icon {
+    position: absolute;
+    left: 13%;
+    top: 2%;
+    overflow: hidden;
+}
+
+.gear-icon:hover {
+}
+
+.question-icon {
+    position: absolute;
+    right: 13%;
+    top: 2%;
+}
+
+.gear-icon svg {
+    transition: transform 0.25s linear;
+}
+
+.gear-icon svg:hover {
+    transform: rotate(90deg);
 }
